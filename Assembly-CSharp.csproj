@@ -46,7 +46,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\ChangeOverlay.cs" />
      <Compile Include="Assets\Light2D\Examples\Scripts\Bat.cs" />
      <Compile Include="Assets\Light2D\Examples\Scripts\BlockSetProfile.cs" />
      <Compile Include="Assets\Light2D\Examples\Scripts\ButtonHelper.cs" />
@@ -80,10 +79,10 @@
      <Compile Include="Assets\Light2D\Scripts\ObstacleCameraPostPorcessor.cs" />
      <Compile Include="Assets\Light2D\Scripts\Point2.cs" />
      <Compile Include="Assets\Light2D\Scripts\Util.cs" />
-     <Compile Include="Assets\Scripts\CameraController.cs" />
      <Compile Include="Assets\Scripts\CameraMovement.cs" />
      <Compile Include="Assets\Scripts\CameraMovement1.cs" />
      <Compile Include="Assets\Scripts\CameraMovement2.cs" />
+     <Compile Include="Assets\Scripts\ElevatorMovement.cs" />
      <Compile Include="Assets\Scripts\EnemyController.cs" />
      <Compile Include="Assets\Scripts\PlayerController.cs" />
      <Compile Include="Assets\Scripts\ShotController.cs" />

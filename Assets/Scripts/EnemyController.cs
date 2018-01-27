@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class EnemyController : MonoBehaviour {
+
     [SerializeField]
     private float speed =0;
     [SerializeField]
@@ -19,6 +20,8 @@ public class EnemyController : MonoBehaviour {
     private float shotKillTime = 100;
     [SerializeField]
     private float shotDelay = 5;
+    [SerializeField]
+    private float shotDam=5;
 
     private float counter=0;
     private float shotCounter=0;
@@ -87,11 +90,22 @@ public class EnemyController : MonoBehaviour {
         float z = shotSpawn.transform.position.z; 
         GameObject Shot = Instantiate(shotPrefab, new Vector3(x,y,z), new Quaternion(0,0,shotDirectionDegrees,0)) as GameObject;
         ShotController shotContGetter = Shot.GetComponent<ShotController>();
-        shotContGetter.GetShotStats(shotSpeed,shotKillTime,shotExpansionMultiplier);
+        shotContGetter.GetShotStats(shotSpeed,shotKillTime,shotExpansionMultiplier,shotDam);
         Vector3 rotA = Shot.transform.position;
         rotA.z = shotDirectionDegrees;
         Shot.transform.Rotate(rotA);
        
 }
    
+
+
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "wave")
+        {
+            collision.gameObject.GetComponent<WaveController>().speed -= .01f;
+        }
+    }
+
 }

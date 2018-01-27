@@ -6,6 +6,8 @@ public class ShotController : MonoBehaviour {
     private Vector2 speed;
     private float killTime;
     private float shotDegrees;
+    [HideInInspector]
+    public float shotDam;
     float count=0;
     // Use this for initialization
     void Start () {
@@ -24,11 +26,12 @@ public class ShotController : MonoBehaviour {
         playerPos += speed;
         transform.position = playerPos;
     }
-    public void GetShotStats(Vector2 shotSpeed, float shotKillTime, float expansionRate)
+    public void GetShotStats(Vector2 shotSpeed, float shotKillTime, float expansionRate, float shotDamage)
     {
         speed = shotSpeed;
         killTime = shotKillTime;
         shotDegrees = expansionRate;
+        shotDam = shotDamage;
 
     }
     private void TimeOut()
