@@ -16,7 +16,7 @@
     <CompilerResponseFile></CompilerResponseFile>
     <UnityProjectType>Game:1</UnityProjectType>
     <UnityBuildTarget>StandaloneWindows:5</UnityBuildTarget>
-    <UnityVersion>5.6.3f1</UnityVersion>
+    <UnityVersion>5.6.3p1</UnityVersion>
     <RootNamespace></RootNamespace>
     <LangVersion>4</LangVersion>
   </PropertyGroup>
@@ -81,7 +81,10 @@
     <Compile Include="Assets\Scripts\CameraMovement.cs" />
     <Compile Include="Assets\Scripts\CameraMovement1.cs" />
     <Compile Include="Assets\Scripts\CameraMovement2.cs" />
+<<<<<<< HEAD
     <Compile Include="Assets\Scripts\ElevatorMovement.cs" />
+=======
+>>>>>>> Greg
     <Compile Include="Assets\Scripts\EnemyController.cs" />
     <Compile Include="Assets\Scripts\PlayerController.cs" />
     <Compile Include="Assets\Scripts\WaveController.cs" />
