@@ -28,7 +28,7 @@ namespace Light2D
             {
                 var name = gameObj.name + " Light Obstacle";
 
-                var child = gameObj.transform.FindChild(name);
+                var child = gameObj.transform.Find(name);
                 var obstacleObj = child == null ? new GameObject(name) : child.gameObject;
 
                 foreach (var obstacleSprite in obstacleObj.GetComponents<LightObstacleSprite>())
