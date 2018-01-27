@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -33,10 +34,14 @@ public class CameraMovement : MonoBehaviour {
         }
         if (!Transition)
         {
-            wave = GameObject.FindGameObjectWithTag("Wave").transform;
-            Vector3 wavepos = wave.position;
-            wavepos.z = transform.position.z;
-            transform.position = wavepos;  
+            try
+            {
+                wave = GameObject.FindGameObjectWithTag("Wave").transform;
+                Vector3 wavepos = wave.position;
+                wavepos.z = transform.position.z;
+                transform.position = wavepos;
+            }
+            catch (Exception ex) { }
 
         }
     }
