@@ -5,9 +5,9 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour {
     private Rigidbody2D rb2d;
     private Transform playerTransform;
-    private bool onGround = true;
-    public float fallMultiplier = 2.5f;
-    public float lowJumpMultiplier = 2f;
+    private bool onGround = true; //DO NOT FORGET TO TAG GROUND
+    public float fallMultiplier = 5f;
+    public float lowJumpMultiplier = 4f;
     public float jumpVelocity;
     // Use this for initialization
     private void Awake()
@@ -20,24 +20,25 @@ public class PlayerController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        if (Input.GetKey(KeyCode.D))
+        if (Input.GetAxis("Horizontal") > 0 && Input.GetButton("Horizontal"))
         {
             Vector2 playerPos = playerTransform.position;
             playerPos.x += .1f;
             playerTransform.position = playerPos;
         }
 
-        if (Input.GetKey(KeyCode.A))
+        if (Input.GetAxis("Horizontal") < 0 && Input.GetButton("Horizontal"))
         {
             Vector2 playerPos = playerTransform.position;
             playerPos.x -= .1f;
             playerTransform.position = playerPos;
         }
 
-        if (Input.GetKeyDown("space"))
+        if (Input.GetButton("Jump") && onGround)
         {
             Debug.Log(rb2d);
             rb2d.velocity = Vector2.up * jumpVelocity;
+            onGround = false;
         } 
 
         if (rb2d.velocity.y < 0)
@@ -45,10 +46,16 @@ public class PlayerController : MonoBehaviour {
             Debug.Log ("hit"); 
             rb2d.velocity += Vector2.up * Physics2D.gravity.y * (fallMultiplier - 1) * Time.deltaTime;
         }
-        else if (rb2d.velocity.y > 0 && !Input.GetKey("space"))
+        else if (rb2d.velocity.y > 0 && !Input.GetButton("Jump"))
         {
             Debug.Log("uh");
             rb2d.velocity += Vector2.up * Physics2D.gravity.y * (lowJumpMultiplier - 1) * Time.deltaTime;
-        }   
+        }
+    }
+
+    private void OnCollisionEnter2D(Collision2D e)
+    {
+        if (e.collider.tag == "Ground")
+            onGround = true;
     }
 }
