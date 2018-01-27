@@ -54,6 +54,16 @@
      <Compile Include="Assets\Scripts\EnemyController.cs" />
      <Compile Include="Assets\Scripts\PlayerController.cs" />
      <Compile Include="Assets\Scripts\WaveController.cs" />
+     <Compile Include="Assets\Tales From The Rift\CanvasKeyboard\Demo\CanvasKeyboardEditableButton.cs" />
+     <Compile Include="Assets\Tales From The Rift\CanvasKeyboard\Demo\ToggleKeyboard.cs" />
+     <Compile Include="Assets\Tales From The Rift\CanvasKeyboard\Scripts\CanvasKeyboard.cs" />
+     <Compile Include="Assets\Tales From The Rift\CanvasKeyboard\Scripts\CanvasKeyboardASCII.cs" />
+     <Compile Include="Assets\Tales From The Rift\CanvasKeyboard\Scripts\OpenCanvasKeyboard.cs" />
+     <Compile Include="Assets\Tales From The Rift\Gaze\Demo\ButtonListener.cs" />
+     <Compile Include="Assets\Tales From The Rift\Gaze\Demo\CubeListener.cs" />
+     <Compile Include="Assets\Tales From The Rift\Gaze\Demo\GazeCrosshairOnOff.cs" />
+     <Compile Include="Assets\Tales From The Rift\Gaze\GazeInputModule.cs" />
+     <Compile Include="Assets\Tales From The Rift\Gaze\GazeInputModuleCrosshair.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>

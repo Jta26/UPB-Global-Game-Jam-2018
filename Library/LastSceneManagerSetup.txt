@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/GettingInCastle.unity
+- path: Assets/GettingInCastleWithNumPad.unity
   isLoaded: 1
   isActive: 1
