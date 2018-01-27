@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class ElevatorMovement : MonoBehaviour {
     bool origin;
+    bool isAtOriginalPosition;
 	// Use this for initialization
 	void Start () {
 		
@@ -20,16 +21,16 @@ public class ElevatorMovement : MonoBehaviour {
     {
         if (origin)
         {
-            animation["ElevatorMovement"].time = 0;
-            animation["Elevator"].speed = 1;
-            animation.Play("Elevator");
+            GetComponent<Animation>()["ElevatorMovement"].time = 0;
+            GetComponent<Animation>()["Elevator"].speed = 1;
+            GetComponent<Animation>().Play("Elevator");
             isAtOriginalPosition = false;
         }
         else
         {
-            animation["Elevator"].time = animation["Elevator"].length;
-            animation["Elevator"].speed = -1;
-            animation.Play("Elevator");
+            GetComponent<Animation>()["Elevator"].time = GetComponent<Animation>()["Elevator"].length;
+            GetComponent<Animation>()["Elevator"].speed = -1;
+            GetComponent<Animation>().Play("Elevator");
             isAtOriginalPosition = true;
         }
     }
