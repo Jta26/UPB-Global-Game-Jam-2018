@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class ElevatorMovement : MonoBehaviour {
     bool origin;
-    bool isAtOriginalPosition;
-	// Use this for initialization
-	void Start () {
+    private bool isAtOriginalPosition;
+    // Use this for initialization
+    void Start () {
 		
 	}
 

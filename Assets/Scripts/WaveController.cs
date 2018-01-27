@@ -4,6 +4,10 @@ using UnityEngine;
 
 public class WaveController : MonoBehaviour {
     public float speed;
+
+    private float realSpeed;
+    public float currentDam;
+    public float recoverRate;
     public float moveSpeed;
     public float gradSpeed = 0;
     private Rigidbody2D rb2d;  
@@ -17,6 +21,8 @@ public class WaveController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+
+        realSpeed = speed+currentDam;
         
         if (Input.GetKey(KeyCode.W))
         {
@@ -66,9 +72,18 @@ public class WaveController : MonoBehaviour {
 
 
 
+
         Vector2 playerPos = transform.position;
-        playerPos.x -= speed;
+        playerPos.x -= realSpeed;
         transform.position = playerPos;
-	}
+        Recovery();
+
+    }
+
+    void Recovery()
+    {
+        if(currentDam>0)
+        { currentDam -= recoverRate; }
+    }
 
 }
