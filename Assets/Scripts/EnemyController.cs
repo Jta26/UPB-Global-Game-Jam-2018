@@ -10,13 +10,19 @@ public class EnemyController : MonoBehaviour {
     [SerializeField]
     private float shotExpansionMultiplier=1;
     [SerializeField]
+    private float numberofShots = 3;
+    [SerializeField]
     private float shotDirectionDegrees=30;
     [SerializeField]
     private Vector2 shotSpeed= new Vector2(0,0);
     [SerializeField]
-    private float shotKillTime = 100; 
+    private float shotKillTime = 100;
+    [SerializeField]
+    private float shotDelay = 5;
 
     private float counter=0;
+    private float shotCounter=0;
+    private float shotDelayCount=0;
     public GameObject shotPrefab;
     public Transform shotSpawn;
    
@@ -46,13 +52,36 @@ public class EnemyController : MonoBehaviour {
         { counter += 1;
         }else if (counter>=fireIntervel)
         {
-            counter = 0;
-            Fire();
+            if(shotDelayCount<shotDelay)
+            {
+                shotDelayCount += 1;
+            }else
+            {
+                shotCounter += 1;
+                shotDelayCount = 0;
+                Fire();
+            }
+
+
+            if(shotCounter<numberofShots)
+            {
+                
+            } else { counter = 0;
+                shotCounter = 0;
+            }
+            
+
+            
+            
+           
         }
 
     }
     private void Fire()
     {
+        
+
+
         float x = shotSpawn.transform.position.x;
         float y = shotSpawn.transform.position.y;
         float z = shotSpawn.transform.position.z; 

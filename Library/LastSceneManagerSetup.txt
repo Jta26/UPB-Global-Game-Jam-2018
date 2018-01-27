@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/TEMP/TestSCENE.unity
+- path: Assets/Scenes/ShroudTest.unity
   isLoaded: 1
   isActive: 1
